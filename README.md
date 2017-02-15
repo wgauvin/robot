@@ -18,7 +18,7 @@ console in (System.in).  The following are the rules:
 * The robot will not move if it would be forced to move off the table.
 * It safely ignores all other commands.
 
-# Building and Running
+# Building
 
 This project requires Java 8 installed.  Either use your machine's own package manager to install
 the latest Java 8 JDK else download an installation from the
@@ -30,6 +30,15 @@ gradle installed, then run the following command to locally install the current 
 ```text
 gradle wrapper
 ```
+## Build Reports
+
+The build uses [PMD](https://pmd.github.io/), [FindBugs](http://findbugs.sourceforge.net/),
+[Checkstyle](http://checkstyle.sourceforge.net/) and [JaCoCo](http://www.eclemma.org/jacoco/) as part
+of code quality and reporting.  All the reports can be found in the ``build/reports`` directory.
+
+The build will break if there are violations for PMD, FindBugs and Chechstyle.
+
+# Running
 
 To run the application after build, run the following command:
 
