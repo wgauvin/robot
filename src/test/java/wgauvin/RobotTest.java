@@ -155,47 +155,4 @@ class RobotTest {
         assertThat(result, is(robot));
     }
 
-
-//    @Test
-//    void createShouldNotCreateRobotWithNegativeX() {
-//        Optional<Robot> result = Robot.create("-1,0,NORTH");
-//
-//        assertThat(result.isPresent(), is(false));
-//    }
-//
-//
-//    @Test
-//    void createShouldNotCreateRobotWithXAbove4() {
-//        Optional<Robot> result = Robot.create("5,0,NORTH");
-//
-//        assertThat(result.isPresent(), is(false));
-//    }
-//
-//    @Test
-//    void createShouldNotCreateRobotWithNegativeY() {
-//        Optional<Robot> result = Robot.create("1,-0,NORTH");
-//
-//        assertThat(result.isPresent(), is(false));
-//    }
-//
-//    @Test
-//    void createShouldNotCreateRobotWithYAbove4() {
-//        Optional<Robot> result = Robot.create("2,5,NORTH");
-//
-//        assertThat(result.isPresent(), is(false));
-//    }
-//
-//    @Test
-//    void createShouldNotCreateRobotWithInvalidDirection() {
-//        Optional<Robot> result = Robot.create("2,3,NE");
-//
-//        assertThat(result.isPresent(), is(false));
-//    }
-//
-//    @Test
-//    void createShouldNotCreateRobotWithSpacedInText() {
-//        Optional<Robot> result = Robot.create("2, 3, NORTH");
-//
-//        assertThat(result.isPresent(), is(false));
-//    }
 }
