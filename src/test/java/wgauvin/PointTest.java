@@ -1,6 +1,7 @@
 package wgauvin;
 
 import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -15,8 +16,11 @@ import java.util.stream.Stream;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import static java.util.Arrays.stream;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 import static wgauvin.Direction.EAST;
 import static wgauvin.Direction.NORTH;
@@ -31,6 +35,39 @@ import static wgauvin.PointTest.TestParam.SAME;
 class PointTest {
 
     private Random random = new Random();
+
+    // invalid point tests
+    @Test
+    void createPointWithNegativeXShouldThrowIllegalArgumentException() {
+
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Point(-1, 0));
+
+        assertThat(exception.getMessage(), is("x must be between 0 and 4"));
+    }
+
+    @Test
+    void createPointWithXGreaterThanBoundsShouldThrowIllegalArgumentException() {
+
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Point(6, 0));
+
+        assertThat(exception.getMessage(), is("x must be between 0 and 4"));
+    }
+
+    @Test
+    void createPointWithNegativeYShouldThrowIllegalArgumentException() {
+
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Point(0, -1));
+
+        assertThat(exception.getMessage(), is("y must be between 0 and 4"));
+    }
+
+    @Test
+    void createPointWithYGreaterThanBoundsShouldThrowIllegalArgumentException() {
+
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Point(0, 6));
+
+        assertThat(exception.getMessage(), is("y must be between 0 and 4"));
+    }
 
     // boundary tests
     @TestParam(startX = ANY, startY = 4, direction = NORTH, endX = SAME, endY = 4)

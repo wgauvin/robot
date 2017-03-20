@@ -86,4 +86,9 @@ class RobotCommandInterfaceTest {
             verify(robot).respond("foo");
         }
     }
+
+    @Test
+    void runShouldHandleIOExceptionGracefully() throws Exception {
+
+    }
 }

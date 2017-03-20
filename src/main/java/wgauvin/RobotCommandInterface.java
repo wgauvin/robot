@@ -28,7 +28,7 @@ public class RobotCommandInterface implements Runnable {
 
     @Inject
     public RobotCommandInterface(Robot robot,
-                                 @Qualifier("robotConsoleReader")BufferedReader bufferedReader,
+                                 @Qualifier("robotConsoleReader") BufferedReader bufferedReader,
                                  @Qualifier("robotConsoleExecutorService") ExecutorService executorService) {
         this.robot = robot;
         this.bufferedReader = bufferedReader;

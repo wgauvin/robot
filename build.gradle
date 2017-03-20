@@ -6,7 +6,7 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-        classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '1.5.1.RELEASE'
+    classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '1.5.1.RELEASE'
 		classpath group: 'org.junit.platform', name: 'junit-platform-gradle-plugin', version: '1.0.0-M3'
 	}
 }
